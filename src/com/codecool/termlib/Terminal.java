@@ -32,8 +32,7 @@ public class Terminal {
      * (i.e.: underlined, dim, bright) to the terminal defaults.
      */
     public static void resetStyle() {
-	command(Attribute.RESET.getAttribute());
-	//command("0");
+	command(CONTROL_CODE+Attribute.RESET.getAttribute()+STYLE);
     }
 
     /**
@@ -41,7 +40,8 @@ public class Terminal {
      *
      * Might reset cursor position.
      */
-    public void clearScreen() {
+    public static void clearScreen() {
+	command(CONTROL_CODE+CLEAR);
     }
 
     /**
@@ -53,7 +53,8 @@ public class Terminal {
      * @param x Column number.
      * @param y Row number.
      */
-    public void moveTo(Integer x, Integer y) {
+    public static void moveTo(Integer x, Integer y) {
+	command(CONTROL_CODE +x+";"+y+ MOVE);
     }
 
     /**
@@ -63,7 +64,8 @@ public class Terminal {
      *
      * @param color The color to set.
      */
-    public void setColor(Color color) {
+    public static void setColor(Color color) {
+	command(CONTROL_CODE+color.getColor()+STYLE);
     }
 
     /**
@@ -83,7 +85,8 @@ public class Terminal {
      * underlined.  Cannot be turned off without turning off colors as
      * well.
      */
-    public void setUnderline() {
+    public static void setUnderline() {
+	command(CONTROL_CODE+Attribute.UNDERSCORE.getAttribute()+STYLE);
     }
 
     /**
@@ -96,7 +99,7 @@ public class Terminal {
      * @param amount Step the cursor this many times.
      */
     public static void moveCursor(Direction direction, Integer amount) {
-	//System.out.print(CONTROL_CODE+commandString+MOVE);
+	//command(CONTROL_CODE+amount+direction);
     }
 
     /**
@@ -121,19 +124,19 @@ public class Terminal {
      * @param commandString The unique part of a command sequence.
      */
     private static void command(String commandString) {
-	System.out.println(CONTROL_CODE+commandString+STYLE);
+	System.out.println(commandString);
     }
 
 	public static void main(String[] args) {
-	command(Color.GREEN.getColor());
-	System.out.println("Something");
-	command(Color.RED.getColor());
-	command(Attribute.UNDERSCORE.getAttribute());
-	System.out.println("Something1");
+	setColor(Color.GREEN);
+	System.out.println("newgreen");
+	setUnderline();
+	System.out.println("underlinegreen");
 	resetStyle();
 	System.out.println("reseted");
-	command(Color.BLACK.getColor());
-	System.out.println("Something2");
+	//clearScreen();
+	moveTo(10, 0);
+	//moveCursor(Direction.UP, 6);
 	}
 
 
