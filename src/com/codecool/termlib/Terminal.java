@@ -31,7 +31,9 @@ public class Terminal {
      * Reset the color, background color, and any other style
      * (i.e.: underlined, dim, bright) to the terminal defaults.
      */
-    public void resetStyle() {
+    public static void resetStyle() {
+	command(Attribute.RESET.getAttribute());
+	//command("0");
     }
 
     /**
@@ -93,7 +95,8 @@ public class Terminal {
      * @param direction Step the cursor in this direction.
      * @param amount Step the cursor this many times.
      */
-    public void moveCursor(Direction direction, Integer amount) {
+    public static void moveCursor(Direction direction, Integer amount) {
+	//System.out.print(CONTROL_CODE+commandString+MOVE);
     }
 
     /**
@@ -117,6 +120,21 @@ public class Terminal {
      *
      * @param commandString The unique part of a command sequence.
      */
-    private void command(String commandString) {
+    private static void command(String commandString) {
+	System.out.println(CONTROL_CODE+commandString+STYLE);
     }
+
+	public static void main(String[] args) {
+	command(Color.GREEN.getColor());
+	System.out.println("Something");
+	command(Color.RED.getColor());
+	command(Attribute.UNDERSCORE.getAttribute());
+	System.out.println("Something1");
+	resetStyle();
+	System.out.println("reseted");
+	command(Color.BLACK.getColor());
+	System.out.println("Something2");
+	}
+
+
 }
