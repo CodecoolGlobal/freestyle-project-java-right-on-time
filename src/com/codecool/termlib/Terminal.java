@@ -140,20 +140,4 @@ public class Terminal {
     private static void command(String commandString) {
 	System.out.println(commandString);
     }
-
-	public static void main(String[] args) {
-	//getCursorPosition();
-	setColor(Color.GREEN);
-	setBgColor(Color.YELLOW);
-	System.out.println("newgreen");
-	setUnderline();
-	System.out.println("underlinegreen");
-	resetStyle();
-	System.out.println("reseted");
-	//clearScreen();
-	moveTo(10, 0);
-	moveCursor(Direction.UP, 6);
-	}
-
-
 }
