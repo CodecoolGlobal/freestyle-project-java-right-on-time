@@ -7,7 +7,8 @@ public class Main {
 
 public static void main(String[] args) {
 
-	Rectangle.drawRectangle(10, Color.YELLOW);
+	Rectangle.drawRectangle();
+	//Triangle.drawTriangle();
+	Command.drawHungarianFlag();
 	}
-
 }
