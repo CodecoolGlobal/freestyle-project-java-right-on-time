@@ -75,7 +75,9 @@ public class Terminal {
      *
      * @param color The background color to set.
      */
-    public void setBgColor(Color color) {
+    public static void setBgColor(Color color) {
+	String bgColor = "4"+color.getColor().split("")[1];
+	command(CONTROL_CODE+bgColor+STYLE);
     }
 
     /**
@@ -129,6 +131,7 @@ public class Terminal {
 
 	public static void main(String[] args) {
 	setColor(Color.GREEN);
+	setBgColor(Color.YELLOW);
 	System.out.println("newgreen");
 	setUnderline();
 	System.out.println("underlinegreen");
