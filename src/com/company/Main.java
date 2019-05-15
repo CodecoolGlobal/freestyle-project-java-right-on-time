@@ -6,17 +6,21 @@ public class Main {
 
 
 public static void main(String[] args) {
-	//getCursorPosition();
-	Terminal.setColor(Color.GREEN);
+	//Terminal.getCursorPosition();
+	//Terminal.setColor(Color.GREEN);
+	Terminal.setChar('a');
+	Terminal.moveCursor(Direction.FORWARD, 10);
+	/*Terminal.setChar('x');
 	Terminal.setBgColor(Color.YELLOW);
 	System.out.println("newgreen");
 	Terminal.setUnderline();
 	System.out.println("underlinegreen");
 	Terminal.resetStyle();
 	System.out.println("reseted");
-	//clearScreen();
-	//moveTo(10, 0);
-	//moveCursor(Direction.UP, 6);
+	Terminal.clearScreen();*/
+	//Terminal.moveTo(5, 100);
+	//Terminal.moveCursor(Direction.FORWARD, 12);
+	//System.out.print("Something");
 	}
 
 }

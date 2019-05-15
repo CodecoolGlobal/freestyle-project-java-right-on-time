@@ -112,7 +112,7 @@ public class Terminal {
      * @param amount Step the cursor this many times.
      */
     public static void moveCursor(Direction direction, Integer amount) {
-	//command(CONTROL_CODE+amount+direction);
+	command(CONTROL_CODE+amount+direction.getDirection());
     }
 
     /**
@@ -126,7 +126,9 @@ public class Terminal {
      * position.
      */
     public static void setChar(char c) {
-	//command(CONTROL_CODE+c);
+	String toPrint = String.valueOf(c);
+	command(toPrint);
+	moveCursor(Direction.BACKWARD, 1);
     }
 
     /**
@@ -138,6 +140,6 @@ public class Terminal {
      * @param commandString The unique part of a command sequence.
      */
     private static void command(String commandString) {
-	System.out.println(commandString);
+	System.out.print(commandString);
     }
 }
