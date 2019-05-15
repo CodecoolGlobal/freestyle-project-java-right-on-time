@@ -25,8 +25,43 @@ public class Command {
         Terminal.moveTo(x + 2, y);
         System.out.print(space5);
         Terminal.resetStyle();
+    }
 
+    private static void printSquareAtCursor(Color color) {
+        Terminal.setBgColor(color);
+        System.out.print(space5);
+        Terminal.moveCursor(Direction.BACKWARD, 6);
+        Terminal.moveCursor(Direction.DOWN, 1);
+        System.out.print(space5);
+        Terminal.moveCursor(Direction.BACKWARD, 6);
+        Terminal.moveCursor(Direction.DOWN, 1);
+        System.out.print(space5);
+        Terminal.resetStyle();
+    }
 
+    private static void moveRight(int amount) {
+        Terminal.moveCursor(Direction.UP, 2 + 3 * (amount - 1));
+        if (amount > 1) {
+            Terminal.moveCursor(Direction.FORWARD, 3 * amount);
+        }
+    }
+
+    private static void skipSquaresToRightXTimes(int amount) {
+//        Terminal.moveCursor(Direction.UP, 2);
+        Terminal.moveCursor(Direction.FORWARD, 6 * amount);
+    }
+
+    private static void moveLeft(int amount) {
+        Terminal.moveCursor(Direction.BACKWARD, 6 + 6 * (amount -1));
+    }
+
+    private static void moveUp(int amount) {
+        Terminal.moveCursor(Direction.UP, 5 + 3 * (amount - 1));
+        Terminal.moveCursor(Direction.BACKWARD, 3);
+    }
+
+    private static void moveDown(int amount) {
+        Terminal.moveCursor(Direction.DOWN, 3 + 3 * (amount - 1));
     }
 
     private static void flagPattern(Color color) {
@@ -80,10 +115,151 @@ public class Command {
         printSquare(Color.RED, 35, 94);
         printSquare(Color.RED, 35, 106);
         printSquare(Color.RED, 38, 100);
-//        printSquare(Color.RED, 47, 94);
-//        printSquare(Color.RED, 47, 106);
-//        printSquare(Color.RED, 47, 94);
-//        printSquare(Color.RED, 47, 106);
     }
 
+    public static void drawDonald() {
+        Terminal.clearScreen();
+        Terminal.moveTo(10, 120);
+        drawThenRight(Color.BLUE, 5);
+        moveLeft(6);
+        moveDown(1);
+        drawThenRight(Color.BLUE, 7);
+        moveLeft(7);
+        moveDown(1);
+        drawThenRight(Color.BLUE, 7);
+        moveLeft(8);
+        moveDown(1);
+        drawThenRight(Color.BLUE, 8);
+        moveLeft(9);
+        moveDown(1);
+        drawThenRight(Color.BLUE, 3);
+        drawThenRight(Color.BLACK, 5);
+        moveLeft(10);
+        moveDown(1);
+        drawThenRight(Color.BLUE, 4);
+        drawThenRight(Color.BLACK, 6);
+
+        moveLeft(11);
+        moveDown(1);
+        drawThenRight(Color.BLUE, 4);
+        drawThenRight(Color.BLACK, 1);
+        drawThenRight(Color.WHITE, 7);
+
+        moveLeft(12);
+        moveDown(1);
+        drawThenRight(Color.BLUE, 3);
+        drawThenRight(Color.BLACK, 1);
+        drawThenRight(Color.WHITE, 9);
+
+        moveLeft(14);
+        moveDown(1);
+        drawThenRight(Color.BLACK, 2);
+        drawThenRight(Color.BLUE, 2);
+        drawThenRight(Color.WHITE, 4);
+        drawThenRight(Color.CYAN, 1);
+        drawThenRight(Color.WHITE, 4);
+        drawThenRight(Color.CYAN, 1);
+
+        moveLeft(15);
+        moveDown(1);
+        drawThenRight(Color.BLACK, 3);
+        skipSquaresToRightXTimes(1);
+        drawThenRight(Color.WHITE, 4);
+        drawThenRight(Color.CYAN, 3);
+        drawThenRight(Color.WHITE, 2);
+        drawThenRight(Color.CYAN, 3);
+
+        moveLeft(17);
+        moveDown(1);
+        drawThenRight(Color.BLACK, 3);
+        skipSquaresToRightXTimes(2);
+        drawThenRight(Color.WHITE, 4);
+        drawThenRight(Color.CYAN, 3);
+        drawThenRight(Color.WHITE, 2);
+        drawThenRight(Color.CYAN, 3);
+
+        moveLeft(17);
+        moveDown(1);
+        drawThenRight(Color.BLACK, 3);
+        skipSquaresToRightXTimes(2);
+        drawThenRight(Color.WHITE, 4);
+        drawThenRight(Color.BLACK, 2);
+        drawThenRight(Color.CYAN, 1);
+        drawThenRight(Color.WHITE, 2);
+        drawThenRight(Color.BLACK, 2);
+        drawThenRight(Color.CYAN, 1);
+
+        moveLeft(17);
+        moveDown(1);
+        drawThenRight(Color.BLACK, 1);
+        skipSquaresToRightXTimes(1);
+        drawThenRight(Color.BLACK, 1);
+        skipSquaresToRightXTimes(2);
+        drawThenRight(Color.WHITE, 4);
+        drawThenRight(Color.BLACK, 2);
+        drawThenRight(Color.CYAN, 1);
+        drawThenRight(Color.WHITE, 2);
+        drawThenRight(Color.BLACK, 2);
+        drawThenRight(Color.CYAN, 1);
+
+        moveLeft(11);
+        moveDown(1);
+        drawThenRight(Color.YELLOW, 2);
+        drawThenRight(Color.WHITE, 1);
+        drawThenRight(Color.BLACK, 2);
+        drawThenRight(Color.CYAN, 1);
+        drawThenRight(Color.YELLOW, 2);
+        drawThenRight(Color.BLACK, 2);
+        drawThenRight(Color.YELLOW, 1);
+
+        moveLeft(11);
+        moveDown(1);
+        drawThenRight(Color.YELLOW, 14);
+
+        moveLeft(14);
+        moveDown(1);
+        drawThenRight(Color.YELLOW, 1);
+        drawThenRight(Color.RED, 1);
+        drawThenRight(Color.YELLOW, 12);
+
+        moveLeft(13);
+        moveDown(1);
+        drawThenRight(Color.YELLOW, 1);
+        drawThenRight(Color.RED, 3);
+        drawThenRight(Color.BLACK, 2);
+        drawThenRight(Color.RED, 2);
+        drawThenRight(Color.YELLOW, 1);
+
+        moveLeft(9);
+        moveDown(1);
+        drawThenRight(Color.YELLOW, 1);
+        drawThenRight(Color.RED, 3);
+        drawThenRight(Color.BLACK, 1);
+        drawThenRight(Color.RED, 2);
+        drawThenRight(Color.YELLOW, 1);
+
+        moveLeft(8);
+        moveDown(1);
+        drawThenRight(Color.YELLOW, 2);
+        drawThenRight(Color.RED, 5);
+        drawThenRight(Color.YELLOW, 1);
+
+        moveLeft(7);
+        moveDown(1);
+        drawThenRight(Color.YELLOW, 2);
+        drawThenRight(Color.RED, 3);
+        drawThenRight(Color.YELLOW, 2);
+
+        moveLeft(6);
+        moveDown(1);
+        drawThenRight(Color.YELLOW, 5);
+
+    }
+
+    private static void drawThenRight(Color color, int amount) {
+        for (int i = 0; i < amount; i++){
+            printSquareAtCursor(color);
+            moveRight(1);
+        }
+    }
 }
