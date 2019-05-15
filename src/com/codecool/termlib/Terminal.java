@@ -44,6 +44,17 @@ public class Terminal {
 	command(CONTROL_CODE+CLEAR);
     }
 
+
+ /**
+     * Get cursos position.
+     *
+     *  cursor position.
+     */
+    public static void getCursorPosition() {
+	 command(CONTROL_CODE+"6n");
+    }
+
+
     /**
      * Move cursor to the given position.
      *
@@ -114,7 +125,8 @@ public class Terminal {
      * @param c the literal character to set for the current cursor
      * position.
      */
-    public void setChar(char c) {
+    public static void setChar(char c) {
+	//command(CONTROL_CODE+c);
     }
 
     /**
@@ -130,6 +142,7 @@ public class Terminal {
     }
 
 	public static void main(String[] args) {
+	//getCursorPosition();
 	setColor(Color.GREEN);
 	setBgColor(Color.YELLOW);
 	System.out.println("newgreen");
@@ -139,7 +152,7 @@ public class Terminal {
 	System.out.println("reseted");
 	//clearScreen();
 	moveTo(10, 0);
-	//moveCursor(Direction.UP, 6);
+	moveCursor(Direction.UP, 6);
 	}
 
 
