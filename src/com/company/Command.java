@@ -20,7 +20,6 @@ public class Command {
         Terminal.moveTo(x, y);
         Terminal.setBgColor(color);
         System.out.print(space5);
-//        Terminal.resetStyle();
         Terminal.moveTo(x + 1, y);
         System.out.print(space5);
         Terminal.moveTo(x + 2, y);
@@ -61,13 +60,30 @@ public class Command {
         flagPattern(Color.YELLOW);
     }
 
-    public static void newTest() {
+    public static void drawHeart() {
         Terminal.clearScreen();
-        printSquare(Color.RED, 10, 10);
-        printSquare(Color.YELLOW, 13, 10);
-        printSquare(Color.YELLOW, 10, 16);
-        printSquare(Color.RED, 13, 16);
-
+        printSquare(Color.RED, 50, 100);
+        printSquare(Color.RED, 47, 94);
+        printSquare(Color.RED, 47, 106);
+        printSquare(Color.RED, 44, 88);
+        printSquare(Color.RED, 44, 112);
+        printSquare(Color.RED, 41, 82);
+        printSquare(Color.RED, 41, 118);
+        printSquare(Color.RED, 38, 76);
+        printSquare(Color.RED, 38, 124);
+        printSquare(Color.RED, 35, 76);
+        printSquare(Color.RED, 35, 124);
+        printSquare(Color.RED, 32, 82);
+        printSquare(Color.RED, 32, 118);
+        printSquare(Color.RED, 32, 88);
+        printSquare(Color.RED, 32, 112);
+        printSquare(Color.RED, 35, 94);
+        printSquare(Color.RED, 35, 106);
+        printSquare(Color.RED, 38, 100);
+//        printSquare(Color.RED, 47, 94);
+//        printSquare(Color.RED, 47, 106);
+//        printSquare(Color.RED, 47, 94);
+//        printSquare(Color.RED, 47, 106);
     }
 
 }
