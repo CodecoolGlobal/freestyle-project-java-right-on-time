@@ -1,6 +1,7 @@
 package com.company;
 
 import com.codecool.termlib.*;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -37,10 +38,7 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-	showOptions();
-	userChoice = getUserChoice();
-	System.out.println(getMethod(userChoice));
-	Rectangle.drawRectangle();
+		Menu.init();
 	}
 
 	
