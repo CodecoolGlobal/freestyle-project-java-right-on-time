@@ -52,7 +52,7 @@ public class Command {
     }
 
     private static void moveLeft(int amount) {
-        Terminal.moveCursor(Direction.BACKWARD, 6 + 6 * (amount -1));
+        Terminal.moveCursor(Direction.BACKWARD, 6 + 6 * (amount - 1));
     }
 
     private static void moveUp(int amount) {
@@ -257,8 +257,13 @@ public class Command {
     }
 
     private static void drawThenRight(Color color, int amount) {
-        for (int i = 0; i < amount; i++){
+        for (int i = 0; i < amount; i++) {
             printSquareAtCursor(color);
+            try {
+                Thread.sleep(25);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             moveRight(1);
         }
     }
