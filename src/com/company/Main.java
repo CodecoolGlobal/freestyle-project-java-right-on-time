@@ -19,6 +19,7 @@ public class Main {
 				Terminal.moveTo(1,1);
 				Menu.runUserChoice(userChoice-1, arrayOfMethods);
 			}
+		
 		}
 	}	
 }

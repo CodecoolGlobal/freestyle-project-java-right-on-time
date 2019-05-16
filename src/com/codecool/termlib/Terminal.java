@@ -68,6 +68,20 @@ public class Terminal {
 	command(CONTROL_CODE +x+";"+y+ MOVE);
     }
 
+
+/**
+     * Set the foreground printing color.
+     *
+     * Already printed text is not affected.
+     *
+     * @param color The color to set.
+     */
+    public static void setAttribute(Attribute attribute) {
+	command(CONTROL_CODE+attribute.getAttribute()+STYLE);
+    }
+
+
+
     /**
      * Set the foreground printing color.
      *

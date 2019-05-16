@@ -8,6 +8,7 @@ public class Menu {
 
 	public static void showOptions(String menuTitle, String[] arrayOfUserOptions) {
 		Terminal.setUnderline();
+		Terminal.setAttribute(Attribute.BLINK);
 		System.out.println(menuTitle+"\n");
 		Terminal.resetStyle();
 		for (String option : arrayOfUserOptions) {
@@ -19,9 +20,12 @@ public class Menu {
 		Integer userChoice;
     		boolean bool;
 		do {
+		Terminal.setAttribute(Attribute.BRIGHT);
+		Terminal.setColor(Color.BLUE);
 		System.out.print("\n" + "Please choose from the options above: ");
+		Terminal.resetStyle();
 		Scanner scanner = new Scanner(System.in);
-		userChoice = scanner.nextInt();
+		userChoice = scanner.nextInt();		
 		bool = userChoice > 0 && userChoice <= arrayOfOptionsLength;
     		}
 		while (!bool);
