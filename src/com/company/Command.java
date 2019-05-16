@@ -88,15 +88,14 @@ public class Command {
     }
 
     public static void drawUkrainianFlag() {
-        Terminal.clearScreen();
         flagPattern(Color.BLUE);
         flagPattern(Color.BLUE);
         flagPattern(Color.YELLOW);
         flagPattern(Color.YELLOW);
+        System.out.println();
     }
 
     public static void drawHeart() {
-        Terminal.clearScreen();
         printSquare(Color.RED, 50, 100);
         printSquare(Color.RED, 47, 94);
         printSquare(Color.RED, 47, 106);
@@ -115,10 +114,10 @@ public class Command {
         printSquare(Color.RED, 35, 94);
         printSquare(Color.RED, 35, 106);
         printSquare(Color.RED, 38, 100);
+        System.out.println();
     }
 
     public static void drawDonald() {
-        Terminal.clearScreen();
         Terminal.moveTo(10, 120);
         drawThenRight(Color.BLUE, 5);
         moveLeft(6);
@@ -253,6 +252,7 @@ public class Command {
         moveLeft(6);
         moveDown(1);
         drawThenRight(Color.YELLOW, 5);
+        System.out.println();
 
     }
 
