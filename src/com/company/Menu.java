@@ -4,20 +4,19 @@ import com.codecool.termlib.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Menu {
-	public static Integer userChoice;
-	
+public class Menu {	
 
 	public static void showOptions(String menuTitle, String[] arrayOfUserOptions) {
 		Terminal.setUnderline();
 		System.out.println(menuTitle+"\n");
 		Terminal.resetStyle();
 		for (String option : arrayOfUserOptions) {
-		System.out.println(Arrays.asList(arrayOfUserOptions).indexOf(option)+1 + ". " + option);
+			System.out.println(Arrays.asList(arrayOfUserOptions).indexOf(option)+1 + ". " + option);
 		}
 	}
 
 	public static Integer getUserChoice(int arrayOfOptionsLength) {
+		Integer userChoice;
     		boolean bool;
 		do {
 		System.out.print("\n" + "Please choose from the options above: ");
@@ -32,6 +31,5 @@ public class Menu {
 	public static void runUserChoice (int userChoice, Runnable[] arrayOfMethods) {
 		arrayOfMethods[userChoice].run();
 	}
-
 }
 
