@@ -6,9 +6,8 @@ import java.util.Scanner;
 
 public class Main {
 	public static Integer userChoice;
-	public static String[] arrayOfUserOptions = new String[] { "draw square", "draw rectangle", "draw triangle", "draw HUN flag", "draw UKR flag", "draw heart", "draw Donald Duck" };
-	public static String[] arrayOfMethods = new String[] { "Rectangle.drawSquare()", "Rectangle.drawRectangle()", "Triangle.drawTriangle()", "Command.drawHungarianFlag()", "Command.drawUkrainianFlag()"};
-//, Command.drawHeart(), Command.drawDonald() };
+	public static String[] arrayOfUserOptions = new String[] { "draw square", "draw rectangle", "draw triangle", "draw flags", "draw heart", "draw Donald Duck", "exit" };
+	public static Runnable[] arrayOfMethods = {Square::drawSquare, Rectangle::drawRectangle, Triangle::drawTriangle, FlagOptions::showOptions, Command::drawHeart, Command::drawDonald, () -> System.exit(0) };
 
 	public static void showOptions() {
 		Terminal.setUnderline();
@@ -21,7 +20,6 @@ public class Main {
 
 	public static Integer getUserChoice() {
     		boolean bool;
-		//Integer userChoice = Integer.valueOf(getUserChoice())-1;
 		do {
 		System.out.print("\n" + "Please choose from the options above: ");
 		Scanner scanner = new Scanner(System.in);
@@ -32,20 +30,18 @@ public class Main {
 		return userChoice;
 	}
 
-	public static String getMethod(Integer userChoice) { 
-		return String.valueOf(arrayOfMethods[userChoice-1]);
+	public static void runUserChoice (int userChoice) {
+		arrayOfMethods[userChoice].run();
 	}
 
 	public static void main(String[] args) {
-	showOptions();
-	userChoice = getUserChoice();
-	System.out.println(getMethod(userChoice));
-	Rectangle.drawRectangle();
-	}
-
-	
-	//Rectangle.drawRectangle();
-	//Triangle.drawTriangle();
-	//Command.drawHungarianFlag();
-	
+		while (true) {			
+			showOptions();
+			userChoice = getUserChoice();
+			Terminal.clearScreen();
+			Terminal.moveTo(1,1);
+			runUserChoice(userChoice-1);
+		}
+	}	
 }
+
