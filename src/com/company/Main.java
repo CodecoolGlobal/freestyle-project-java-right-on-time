@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class Main {
 	public static Integer userChoice;
-	public static String[] arrayOfUserOptions = new String[] { "draw rectangle", "draw triangle", "draw HUN flag", "draw UKR flag", "draw heart", "draw Donald Duck" };
-	public static String[] arrayOfMethods = new String[] { "Rectangle.drawRectangle()", "Triangle.drawTriangle()", "Command.drawHungarianFlag()", "Command.drawUkrainianFlag()"};
+	public static String[] arrayOfUserOptions = new String[] { "draw square", "draw rectangle", "draw triangle", "draw HUN flag", "draw UKR flag", "draw heart", "draw Donald Duck" };
+	public static String[] arrayOfMethods = new String[] { "Rectangle.drawSquare()", "Rectangle.drawRectangle()", "Triangle.drawTriangle()", "Command.drawHungarianFlag()", "Command.drawUkrainianFlag()"};
 //, Command.drawHeart(), Command.drawDonald() };
 
 	public static void showOptions() {
@@ -40,8 +40,10 @@ public class Main {
 	showOptions();
 	userChoice = getUserChoice();
 	System.out.println(getMethod(userChoice));
+	Square.drawSquare();
 	}
 
+	
 	//Rectangle.drawRectangle();
 	//Triangle.drawTriangle();
 	//Command.drawHungarianFlag();
