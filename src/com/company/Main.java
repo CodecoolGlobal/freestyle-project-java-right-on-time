@@ -40,7 +40,7 @@ public class Main {
 	showOptions();
 	userChoice = getUserChoice();
 	System.out.println(getMethod(userChoice));
-	Square.drawSquare();
+	Rectangle.drawRectangle();
 	}
 
 	
