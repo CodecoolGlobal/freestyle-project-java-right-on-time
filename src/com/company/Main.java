@@ -10,7 +10,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Terminal.clearScreen();
-		Welcome.hello();
+		Welcome.hello(Color.YELLOW);
 		Terminal.setAttribute(Attribute.BRIGHT);
 		Terminal.setColor(Color.RED);
 		System.out.println("\n"+"Welcome to our awesome draw application!");
