@@ -9,6 +9,13 @@ public class Main {
 	public static Runnable[] arrayOfMethods = {Square::drawSquare, Rectangle::drawRectangle, Triangle::drawTriangle, FlagOptions::flagMenu, Command::drawHeart, Command::drawDonald};
 
 	public static void main(String[] args) {
+		Terminal.clearScreen();
+		Welcome.hello();
+		Terminal.setAttribute(Attribute.BRIGHT);
+		Terminal.setColor(Color.RED);
+		System.out.println("\n"+"Welcome to our awesome draw application!");
+		System.out.println();
+		Terminal.resetStyle();
 		while (true) {			
 			Menu.showOptions("Main menu", arrayOfUserOptions);
 			userChoice = Menu.getUserChoice(arrayOfUserOptions.length);
