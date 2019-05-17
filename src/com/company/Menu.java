@@ -16,21 +16,6 @@ public class Menu {
 		}
 	}
 
-	public static Integer getUserChoice(int arrayOfOptionsLength) {
-		Integer userChoice;
-    		boolean bool;
-		do {
-		Terminal.setAttribute(Attribute.BRIGHT);
-		Terminal.setColor(Color.BLUE);
-		System.out.print("\n" + "Please choose from the options above: ");
-		Terminal.resetStyle();
-		Scanner scanner = new Scanner(System.in);
-		userChoice = scanner.nextInt();		
-		bool = userChoice > 0 && userChoice <= arrayOfOptionsLength;
-    		}
-		while (!bool);
-		return userChoice;
-	}
 
 	public static void runUserChoice (int userChoice, Runnable[] arrayOfMethods) {
 		arrayOfMethods[userChoice].run();

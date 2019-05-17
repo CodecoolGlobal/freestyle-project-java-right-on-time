@@ -18,7 +18,7 @@ public class Main {
 		Terminal.resetStyle();
 		while (true) {			
 			Menu.showOptions("Main menu", arrayOfUserOptions);
-			userChoice = Menu.getUserChoice(arrayOfUserOptions.length);
+			userChoice = UserInput.getUserChoice(arrayOfUserOptions.length);
 			if (userChoice == arrayOfMethods.length+1) {
 				break;
 				} else {

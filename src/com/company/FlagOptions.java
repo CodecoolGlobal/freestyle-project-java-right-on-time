@@ -11,8 +11,10 @@ public class FlagOptions {
 	public static void flagMenu() {
 		while (true) {			
 			Menu.showOptions("Flags menu", arrayOfUserOptions);
-			userChoice = Menu.getUserChoice(arrayOfUserOptions.length);
+			userChoice = UserInput.getUserChoice(arrayOfUserOptions.length);
 			if (userChoice == arrayOfMethods.length+1) {
+				Terminal.clearScreen();
+				Terminal.moveTo(1,1);
 				break;
 				} else {
 				Terminal.clearScreen();

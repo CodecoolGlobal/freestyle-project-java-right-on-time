@@ -6,15 +6,20 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 
+public class Square {
 
-public class Square
+  public static Integer sideLength; 
+  public static Color color;
+  public static Integer row;
+  public static Integer column;
 
-{
   public static void drawSquare() {
-    Integer sideLength = Integer.valueOf(getSideLength());
-    Color color = getColor();
-    Integer row = Integer.valueOf(getX());
-    Integer column = Integer.valueOf(getY());
+
+	sideLength = Integer.valueOf(UserInput.getHeight("Please specify the side length of your square: "));
+  	color = UserInput.getColor("Please specify the color of your square (BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE): ");
+  	row = Integer.valueOf(UserInput.getX("Please specify the row number where you would like to put your square: "));
+  	column = Integer.valueOf(UserInput.getY("Please specify the column number where you would like to put your square: "));
+
     Terminal.moveTo(row, column);
     Terminal.setBgColor(color);
     for (int i = 0; i < sideLength.intValue(); i++) {
@@ -23,50 +28,6 @@ public class Square
     } 
     Terminal.resetStyle();
     System.out.println();
-  }
-  
-  public static int getSideLength() {
-    System.out.print("Please specify the side length of your square: ");
-    Scanner scanner = new Scanner(System.in);
-    return Math.abs(scanner.nextInt());
-  }
-  
-  public static Color getColor() {
-    boolean bool;
-    String str, arrayOfString[] = { "BLACK", "RED", "GREEN", "YELLOW", "BLUE", "MAGENTA", "CYAN", "WHITE" };
-    Color[] arrayOfColor = { Color.BLACK, Color.RED, Color.GREEN, Color.YELLOW, Color.BLUE, Color.MAGENTA, Color.CYAN, Color.WHITE };
-
-    
-    do {
-      System.out.print("Please specify the color of your square (BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE): ");
-      Scanner scanner = new Scanner(System.in);
-      str = scanner.nextLine();
-      bool = Arrays.asList(arrayOfString).contains(str);
-    }
-    while (!bool);
-    return arrayOfColor[Arrays.asList(arrayOfString).indexOf(str)];
-  }
-
-  
-  public static int getX() {
-    System.out.print("Please specify the row number where you would like to put your square (>0): ");
-    Scanner scanner = new Scanner(System.in);
-    int i = Math.abs(scanner.nextInt());
-    if (i == 0) {
-      return 1;
-    }
-    return i;
-  }
-
-  
-  public static int getY() {
-    System.out.print("Please specify the column number where you would like to put your square (>0): ");
-    Scanner scanner = new Scanner(System.in);
-    int i = Math.abs(scanner.nextInt());
-    if (i == 0) {
-      return 1;
-    }
-    return i;
   }
 }
 

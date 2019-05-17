@@ -1,18 +1,27 @@
 package com.company;
 
-import com.codecool.termlib.Color;
-import com.codecool.termlib.Terminal;
+import com.codecool.termlib.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Triangle {
-  public static Integer height = Integer.valueOf(getHeight());
-  public static Color color = getColor();
-  public static Integer row = Integer.valueOf(getX());
-  public static Integer column = Integer.valueOf(getY());
 
-  
+  public static Integer height; 
+  public static Color color;
+  public static Integer row;
+  public static Integer column;
+
   public static void drawTriangle() {
+
+	height = Integer.valueOf(UserInput.getHeight("Please specify the height of your triangle: "));
+  	color = UserInput.getColor("Please specify the color of your triangle (BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE): ");
+  	row = Integer.valueOf(UserInput.getX("Please specify the row number where you would like to put your triangle: "));
+  	column = Integer.valueOf(UserInput.getY("Please specify the column number where you would like to put your triangle: "));
+
+	if (column.intValue() <= height.intValue()) {
+	       column = height.intValue();
+	}
+
     Terminal.moveTo(row, column);
     Terminal.setColor(color);
     int i;
@@ -31,50 +40,6 @@ public class Triangle {
     System.out.println("\u203E".repeat(i * 2));
     Terminal.resetStyle();
     System.out.println();
-  }
-  
-  public static int getHeight() {
-    System.out.print("Please specify the height of your triangle: ");
-    Scanner scanner = new Scanner(System.in);
-    return Math.abs(scanner.nextInt());
-  }
-  
-  public static Color getColor() {
-    boolean bool;
-    String str, arrayOfString[] = { "BLACK", "RED", "GREEN", "YELLOW", "BLUE", "MAGENTA", "CYAN", "WHITE" };
-    Color[] arrayOfColor = { Color.BLACK, Color.RED, Color.GREEN, Color.YELLOW, Color.BLUE, Color.MAGENTA, Color.CYAN, Color.WHITE };
-
-    
-    do {
-      System.out.print("Please specify the color of your rectangle (BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE): ");
-      Scanner scanner = new Scanner(System.in);
-      str = scanner.nextLine();
-      bool = Arrays.asList(arrayOfString).contains(str);
-    }
-    while (!bool);
-    return arrayOfColor[Arrays.asList(arrayOfString).indexOf(str)];
-  }
-
-  
-  public static int getX() {
-    System.out.print("Please specify the row number where you would like to put your triangle: ");
-    Scanner scanner = new Scanner(System.in);
-    int i = Math.abs(scanner.nextInt());
-    if (i == 0) {
-      return 1;
-    }
-    return i;
-  }
-
-  
-  public static int getY() {
-    System.out.print("Please specify the column number where you would like to put your triangle: ");
-    Scanner scanner = new Scanner(System.in);
-    int i = Math.abs(scanner.nextInt());
-    if (i <= height.intValue()) {
-      return height.intValue();
-    }
-    return i;
   }
 }
 
