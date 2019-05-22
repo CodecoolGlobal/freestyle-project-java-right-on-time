@@ -1,5 +1,8 @@
 package com.codecool.termlib;
 
+import java.io.*;
+
+
 public class Terminal {
     /**
      * The beginning of control sequences.
@@ -69,17 +72,27 @@ public class Terminal {
     }
 
 
-/**
-     * Set the foreground printing color.
-     *
-     * Already printed text is not affected.
-     *
-     * @param color The color to set.
-     */
+
     public static void setAttribute(Attribute attribute) {
 	command(CONTROL_CODE+attribute.getAttribute()+STYLE);
     }
 
+    /**
+     * Make cursor invisible.
+     *
+     */
+    public static void setCursorInvisible() {
+	command(CONTROL_CODE+"?25l");
+    }
+
+
+    /**
+     * Make cursor visible.
+     *
+     */
+    public static void setCursorVisible() {
+	command(CONTROL_CODE+"?25h");
+    }
 
 
     /**
@@ -144,6 +157,26 @@ public class Terminal {
 	command(toPrint);
 	moveCursor(Direction.BACKWARD, 1);
     }
+
+    public static void intoRawModeWithoutEcho() {
+	String[] cmd = {"/bin/sh", "-c", "stty raw -echo </dev/tty"};       //-echo input is not given back - printed on terminal
+		try {
+			Runtime.getRuntime().exec(cmd);
+		}
+		catch(IOException e) {
+		  e.printStackTrace();
+		}
+	}
+
+    public static void intoCookedModeWithEcho() {
+	String[] cmd = {"/bin/sh", "-c", "stty cooked echo </dev/tty"};
+		try {		  
+			Runtime.getRuntime().exec(cmd);
+		}
+		catch(IOException e) {
+		  e.printStackTrace();
+		}
+	}
 
     /**
      * Helper function for sending commands to the terminal.

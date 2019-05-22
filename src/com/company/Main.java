@@ -5,12 +5,13 @@ import com.codecool.termlib.*;
 
 public class Main {
 	public static Integer userChoice;
-	public static String[] arrayOfUserOptions = new String[] { "draw square", "draw rectangle", "draw triangle", "draw flags", "draw heart", "draw Donald Duck", "exit" };
-	public static Runnable[] arrayOfMethods = {Square::drawSquare, Rectangle::drawRectangle, Triangle::drawTriangle, FlagOptions::flagMenu, Command::drawHeart, Command::drawDonald};
+	public static String[] arrayOfUserOptions = new String[] { "draw square", "draw rectangle", "draw triangle", "draw flags", "draw heart", "draw Donald Duck", "free draw", "exit" };
+	public static Runnable[] arrayOfMethods = {Square::drawSquare, Rectangle::drawRectangle, Triangle::drawTriangle, FlagOptions::flagMenu, Command::drawHeart, Command::drawDonald, Draw::freeDraw};
 
 	public static void main(String[] args) {
+		Terminal.setCursorVisible();
 		Terminal.clearScreen();
-		Welcome.hello(Color.YELLOW);
+		//Welcome.hello(Color.YELLOW);
 		Terminal.setAttribute(Attribute.BRIGHT);
 		Terminal.setColor(Color.RED);
 		System.out.println("\n"+"Welcome to our awesome draw application!");

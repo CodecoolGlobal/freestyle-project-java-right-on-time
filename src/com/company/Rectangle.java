@@ -1,7 +1,6 @@
 package com.company;
 
-import com.codecool.termlib.Color;
-import com.codecool.termlib.Terminal;
+import com.codecool.termlib.*;
 import java.util.Arrays;
 import java.util.Scanner;
 

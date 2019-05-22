@@ -3,6 +3,7 @@ package com.company;
 import com.codecool.termlib.*;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.io.*;
 
 
 public class UserInput {
@@ -72,4 +73,45 @@ public class UserInput {
 	return userChoice;
 	}
 
+  public static char getFillChar(String message) {
+    System.out.print(message);
+    Scanner scanner = new Scanner(System.in);
+    char ch = scanner.next().charAt(0);
+    return ch;
+  }
+
+  /*public static char getHiddenInput() {
+	Terminal.withoutEnter();
+    Scanner scanner = new Scanner(System.in);
+    char ch = scanner.next().charAt(0);
+	Terminal.withEnter();
+    return ch;
+  }*/
+
+
+  public static char tryToRead() {	
+	try {        	
+		if (System.in.available() > 0) {
+        	    return (char)System.in.read();
+        	}
+    	}
+    	catch (IOException e) {
+        	System.err.println("Error " + e.getMessage());
+    	}
+    	return '0';
+  }
+
+
+  /*private Character tryToRead() {
+    try {
+        if (System.in.available() > 0) {
+            return (char)System.in.read();
+        }
+    }
+    catch (IOException e) {
+        System.err.println("Error " + e.getMessage());
+    }
+    return null;
+  }*/
 }
+
