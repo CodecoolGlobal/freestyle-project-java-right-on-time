@@ -2,12 +2,20 @@ package com.company;
 
 import com.codecool.termlib.*;
 
+/**
+ * FlagOptions class of draw project.
+ * <p>
+ */
 
 public class FlagOptions {
 	public static Integer userChoice;
 	public static String[] arrayOfUserOptions = new String[] { "draw hungarian flag", "draw ukrainien flag", "draw spanish flag", "draw french flag", "draw german flag", "draw lithuanian flag", "draw LGBTQ flag", "back to main menu" };
 	public static Runnable[] arrayOfMethods = {Flags::hungary, Flags::ukraine, Flags::spain, Flags::france, Flags::germany, Flags::lithuania, Flags::lgbtq };
 
+	/**
+	 * Flag submenu.
+	 * <p>
+	 */
 	public static void flagMenu() {
 		while (true) {			
 			Menu.showOptions("Flags menu", arrayOfUserOptions);

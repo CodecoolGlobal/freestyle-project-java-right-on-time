@@ -4,6 +4,12 @@ import com.codecool.termlib.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
+/**
+ * Triangle class of draw project.
+ * <p>
+ */
+
 public class Triangle {
 
   public static Integer height; 
@@ -11,6 +17,11 @@ public class Triangle {
   public static Integer row;
   public static Integer column;
 
+    /**
+     * Draws a triangle.
+     * <p>
+     *
+     */
   public static void drawTriangle() {
 
 	height = Integer.valueOf(UserInput.getHeight("Please specify the height of your triangle: "));

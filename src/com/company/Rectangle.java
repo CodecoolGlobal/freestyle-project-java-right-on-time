@@ -4,7 +4,10 @@ import com.codecool.termlib.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
-
+/**
+ * Rectangle class of draw project.
+ * <p>
+ */
 
 public class Rectangle {
 
@@ -14,6 +17,11 @@ public class Rectangle {
   public static Integer row;
   public static Integer column;
 
+    /**
+     * Draws a rectangle.
+     * <p>
+     *
+     */
   public static void drawRectangle() {
 
 	height = Integer.valueOf(UserInput.getHeight("Please specify the height of your rectangle: "));

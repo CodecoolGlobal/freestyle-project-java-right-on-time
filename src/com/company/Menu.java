@@ -4,8 +4,19 @@ import com.codecool.termlib.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Menu {	
+/**
+ * Menu class of draw project.
+ * <p>
+ */
 
+public class Menu {
+	/**
+	 * Displays the menu options.
+	 * <p>
+	 *
+	 * @param  menuTitle title of menu
+	 * @param  arrayOfUserOptions array of menu options
+	 */
 	public static void showOptions(String menuTitle, String[] arrayOfUserOptions) {
 		Terminal.setUnderline();
 		Terminal.setAttribute(Attribute.BLINK);
@@ -16,7 +27,13 @@ public class Menu {
 		}
 	}
 
-
+	/**
+	 * Executes user choice.
+	 * <p>
+	 *
+	 * @param  userChoice user's choice
+	 * @param  arrayOfMethods array of methods
+	 */
 	public static void runUserChoice (int userChoice, Runnable[] arrayOfMethods) {
 		arrayOfMethods[userChoice].run();
 	}

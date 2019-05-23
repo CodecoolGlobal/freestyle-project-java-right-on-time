@@ -2,6 +2,10 @@ package com.company;
 
 import com.codecool.termlib.*;
 
+/**
+ * Main class of draw project.
+ * <p>
+ */
 
 public class Main {
 	public static Integer userChoice;

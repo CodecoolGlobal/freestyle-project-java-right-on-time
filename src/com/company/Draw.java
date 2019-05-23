@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.io.*;
 
+/**
+ * Draw class of draw project.
+ * <p>
+ */
 public class Draw {	
 
 	public static Character fillChar;
@@ -12,6 +16,10 @@ public class Draw {
 	public static Integer row;
 	public static Integer column;
 
+	/**
+	 * Creates free draw.
+	 * <p>
+	 */
 	public static void freeDraw() {
 		
 		System.out.println("You can move cursor with a: LEFT, s: DOWN, d: RIGHT, w: UP, q: exit");
@@ -50,25 +58,47 @@ public class Draw {
 		Terminal.setCursorVisible();
 	}
 
-
+	/**
+	 * Moves cursor up with one block.
+	 * <p>
+	 *
+	 * @param  fillChar character to display
+	 */
 	public static void moveUp (char fillChar) {	
 		Terminal.moveCursor(Direction.UP, 1);
 		Terminal.setChar(fillChar);
 	}
 
+	/**
+	 * Moves cursor down with one block.
+	 * <p>
+	 *
+	 * @param  fillChar character to display
+	 */
 	public static void moveDown (char fillChar) {	
 		Terminal.moveCursor(Direction.DOWN, 1);
 		Terminal.setChar(fillChar);
 	}
 
+	/**
+	 * Moves cursor back (to the left) with one block.
+	 * <p>
+	 *
+	 * @param  fillChar character to display
+	 */
 	public static void moveLeft (char fillChar) {	
 		Terminal.moveCursor(Direction.BACKWARD, 1);
 		Terminal.setChar(fillChar);
 	}
 
+	/**
+	 * Moves cursor forward (to the right) with one block.
+	 * <p>
+	 *
+	 * @param  fillChar character to display
+	 */
 	public static void moveRight (char fillChar) {
 		Terminal.moveCursor(Direction.FORWARD, 1);
 		Terminal.setChar(fillChar);
 	}	
 }
-

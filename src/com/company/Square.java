@@ -5,6 +5,10 @@ import com.codecool.termlib.Terminal;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Square class of draw project.
+ * <p>
+ */
 
 public class Square {
 
@@ -13,6 +17,11 @@ public class Square {
   public static Integer row;
   public static Integer column;
 
+    /**
+     * Draws a square.
+     * <p>
+     *
+     */
   public static void drawSquare() {
 
 	sideLength = Integer.valueOf(UserInput.getHeight("Please specify the side length of your square: "));

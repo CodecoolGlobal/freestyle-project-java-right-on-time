@@ -5,8 +5,19 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.awt.event.ActionListener;
 
-public class Welcome {	
+/**
+ * Welcome class of draw project.
+ * <p>
+ */
 
+public class Welcome {
+
+	/**
+	 * Sets time span.
+	 * <p>
+	 *
+	 * @param  sec sec to wait
+	 */
 	private static void timeSpan(int sec) {
 	try {
 		Thread.sleep(sec);
@@ -17,7 +28,11 @@ public class Welcome {
 
 	private static char fillChar = '\u2588';
 
-
+	/**
+	 * Draws letter H.
+	 * <p>
+	 *
+	 */
 	private static void drawH() {
 		for (int i=0;i<=6;i++) {
 			Terminal.setChar(fillChar);
@@ -41,8 +56,13 @@ public class Welcome {
 			Terminal.moveCursor(Direction.DOWN, 1);
 			timeSpan(40);
 			}
-	} 
+	}
 
+	/**
+	 * Draws letter E.
+	 * <p>
+	 *
+	 */
 	private static void drawE() {
 		for (int i=0;i<=6;i++) {
 			Terminal.setChar(fillChar);
@@ -80,6 +100,11 @@ public class Welcome {
 			}
 		}
 
+	/**
+	 * Draws letter L.
+	 * <p>
+	 *
+	 */
 	private static void drawL() {
 		for (int j=0;j<=5;j++) {
 			Terminal.setChar(fillChar);
@@ -93,6 +118,11 @@ public class Welcome {
 			}
 		}
 
+	/**
+	 * Draws letter O.
+	 * <p>
+	 *
+	 */
 	private static void drawO() {
 		for (int j=0;j<=0;j++) {
 			Terminal.setChar(fillChar);
@@ -157,7 +187,11 @@ public class Welcome {
 			}
 		}
 
-
+	/**
+	 * Draws exclamation mark (!).
+	 * <p>
+	 *
+	 */
 	private static void drawExcl() {
 		for (int j=0;j<=4;j++) {
 			Terminal.setChar(fillChar);
@@ -169,7 +203,12 @@ public class Welcome {
 			Terminal.moveCursor(Direction.DOWN, 1);
 		}
 
-
+	/**
+	 * Draws HELLO.
+	 * <p>
+	 *
+	 * @param color color of word
+	 */
 	public static void hello(Color color) {
 		Terminal.setColor(color);
 		Terminal.moveTo(5,70);

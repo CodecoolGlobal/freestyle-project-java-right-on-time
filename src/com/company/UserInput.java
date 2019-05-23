@@ -6,20 +6,46 @@ import java.util.Scanner;
 import java.io.*;
 
 
+/**
+ * User input class of draw project.
+ * <p>
+ */
+
 public class UserInput {
 
+    /**
+     * Gets height data from user.
+     * <p>
+     *
+     * @param  message text which appears at input
+     * @return int absolute value of height input
+     */
   public static int getHeight(String message) {
     System.out.print(message);
     Scanner scanner = new Scanner(System.in);
     return Math.abs(scanner.nextInt());
   }
 
+    /**
+     * Gets height:width ration from user.
+     * <p>
+     *
+     * @param  message text which appears at input
+     * @return float absolute value of user input
+     */
   public static float getWidthRatio(String message) {
     System.out.print(message);
     Scanner scanner = new Scanner(System.in);
     return Math.abs(scanner.nextFloat());
   }
-  
+
+    /**
+     * Gets color from user.
+     * <p>
+     *
+     * @param  message text which appears at input
+     * @return Color color from user input
+     */
   public static Color getColor(String message) {
     boolean bool;
     String str, arrayOfString[] = { "BLACK", "RED", "GREEN", "YELLOW", "BLUE", "MAGENTA", "CYAN", "WHITE" };
@@ -35,7 +61,13 @@ public class UserInput {
     return arrayOfColor[Arrays.asList(arrayOfString).indexOf(str)];
   }
 
-  
+    /**
+     * Gets row number from user.
+     * <p>
+     *
+     * @param  message text which appears at input
+     * @return int row number
+     */
   public static int getX(String message) {
     System.out.print(message);
     Scanner scanner = new Scanner(System.in);
@@ -46,7 +78,13 @@ public class UserInput {
     return i;
   }
 
-  
+    /**
+     * Gets column number from user.
+     * <p>
+     *
+     * @param  message text which appears at input
+     * @return int column number
+     */
   public static int getY(String message) {
     System.out.print(message);
     Scanner scanner = new Scanner(System.in);
@@ -57,6 +95,13 @@ public class UserInput {
     return i;
   }
 
+    /**
+     * Gets user's choice from menu options.
+     * <p>
+     *
+     * @param  arrayOfOptionsLength  number of options
+     * @return Integer user's choice
+     */
   public static Integer getUserChoice(int arrayOfOptionsLength) {
 	Integer userChoice;
 	boolean bool;
@@ -73,6 +118,13 @@ public class UserInput {
 	return userChoice;
 	}
 
+    /**
+     * Gets fill character from user.
+     * <p>
+     *
+     * @param  message text which appears at input
+     * @return char fill character to draw with
+     */
   public static char getFillChar(String message) {
     System.out.print(message);
     Scanner scanner = new Scanner(System.in);
