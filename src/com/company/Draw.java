@@ -25,7 +25,7 @@ public class Draw {
 		Terminal.setColor(color);
 		
 		Terminal.setCursorInvisible();  //cursor is hidden while input
-		Terminal.intoRawModeWithoutEcho();        // change to raw mode without echo	!!!!!!!staircase!!!!
+		Terminal.intoRawModeWithoutEcho();        // change to raw mode without echo	!!!!!!!staircase!!!! 2xTerminal.intoCookedModeWithEcho();megoldotta
 		Character direction = '0';
 		while (direction != 'q') {
 			direction = UserInput.tryToRead();
@@ -39,6 +39,7 @@ public class Draw {
 				case 'w': moveUp(fillChar);
 					break;
 				case 'q': 
+					Terminal.intoCookedModeWithEcho();   
 					Terminal.resetStyle();  
 					Terminal.clearScreen();
 					Terminal.moveTo(1, 1);
@@ -46,7 +47,8 @@ public class Draw {
 				default: break;
 			}
 		}
-		Terminal.intoCookedModeWithEcho();        	
+		Terminal.intoCookedModeWithEcho();   
+		System.out.println();     	
 		Terminal.setCursorVisible();
 	}
 
